@@ -5,23 +5,28 @@ using System.IO;
 using System.Runtime.Serialization.Formatters.Binary;
 using UnityEngine.SceneManagement;
 using UnityEditor;
+using Unity.VisualScripting;
 
 public class SaveManger : MonoBehaviour
 {
     /*
-   下面是会发生的改变的量
+   下面是会发生的改变的量 (活变量)
    */
+    public int catFood;
 
-
+    public int fishingRodNumber = 0;
+    public int[] itemHeld = new int[totalNumberOfItems];   //物品的拥有数量
     /*
-   下面是不会发生的改变的量
-   */
+    下面是不会发生的改变的量 (死变量)
+    */
+
 
 
     /*
    下面是其他的一些变量
    */
     public SaveManger saveManger = Instance;  //存储数据的对象(saveManger预制体)
+    public static int totalNumberOfItems = 10;
     public int test = 0;           //测试变量
 
 
