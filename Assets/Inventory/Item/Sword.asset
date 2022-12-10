@@ -15,5 +15,6 @@ MonoBehaviour:
   itemName: Sword
   itemImage: {fileID: 21300000, guid: 62f1d649bffcd45448c1a4767fdbd582, type: 3}
   itemHeld: 0
+  itemID: 0
   itemInfo: "\u6211\u5C31\u662F\u5251"
   equip: 1
