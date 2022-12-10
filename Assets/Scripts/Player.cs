@@ -27,7 +27,6 @@ public class Player : MonoBehaviour
     void Update()
     {
         Movement();
-        openBag();
     }
 
 
@@ -40,13 +39,13 @@ public class Player : MonoBehaviour
 
 
 
-    void openBag()
+   public void openBag()
     {
         //控制Bag显示还是隐藏
-        if (Input.GetKeyDown(KeyCode.O))
-        {
+      
+        
             isOpen = !isOpen;
             Bag.SetActive(isOpen);
-        }
+        
     }
 }
