@@ -5,12 +5,13 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "New Item", menuName = "Inventory/New Item")]
 public class Item : ScriptableObject
 {
-    public string itemName;//µÀ¾ßÃû³Æ
-    public Sprite itemImage;//µÀ¾ßÍ¼Æ¬¾«Áé
-    public int itemHeld;//Ä¿Ç°³ÖÓĞµÀ¾ßÊıÁ¿
+    public string itemName;//é“å…·åç§°
+    public Sprite itemImage;//é“å…·å›¾ç‰‡ç²¾çµ
+    public int itemHeld;//ç›®å‰æŒæœ‰é“å…·æ•°é‡
     public int itemID;
+    public int itemPrice;
     [TextArea]
-    public string itemInfo;//µÀ¾ßÃèÊöĞÅÏ¢
+    public string itemInfo;//é“å…·æè¿°ä¿¡æ¯
 
-    public bool equip;//µÀ¾ßÊÇ·ñ¿É×°±¸
+    public bool equip;//é“å…·æ˜¯å¦å¯è£…å¤‡
 }
