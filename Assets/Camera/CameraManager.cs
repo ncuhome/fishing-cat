@@ -23,7 +23,6 @@ public class CameraManager : MonoBehaviour
     {
         Vector3 tPos = new Vector3(0, transform.position.y, transform.position.z);
         tPos.x = Mathf.Clamp(transform.position.x + inputManager.horizontal * maxMoveSpeed, border.x + camWidth, border.y - camWidth);
-        Debug.Log(inputManager.horizontal);
         transform.position = tPos;
     }
 }
