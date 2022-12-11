@@ -1,5 +1,9 @@
 fileFormatVersion: 2
+<<<<<<<< HEAD:Assets/Bag/Res/Tiny RPG Forest/Scenes.meta
 guid: d42eefdb67d85ad48bb8a946bdd9e5cd
+========
+guid: baaf8530b454d154880564f3e5f9c575
+>>>>>>>> 7b9bd7e28766d4d693a493bc623639c003dbbada:Assets/Camera.meta
 folderAsset: yes
 DefaultImporter:
   externalObjects: {}
