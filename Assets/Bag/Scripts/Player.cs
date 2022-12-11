@@ -10,7 +10,7 @@ public class Player : MonoBehaviour
     public float speed;
     Vector2 movement;
   
-    //背包引用
+    //鑳屽寘寮曠敤
     public GameObject Bag;
     bool isOpen;
 
@@ -41,7 +41,7 @@ public class Player : MonoBehaviour
 
    public void openBag()
     {
-        //控制Bag显示还是隐藏
+        //鎺у埗Bag鏄剧ず杩樻槸闅愯棌
       
         
             isOpen = !isOpen;

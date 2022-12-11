@@ -3,14 +3,14 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-//µÀ¾ß²å²Û£¬¿ØÖÆµÀ¾ßµÄ×Ô¶¯ÅÅÁĞºÍ×Ô¶¯×°ÅäµÀ¾ß¾«Áé£¬¹ÒÔØÔÚslotÔ¤ÖÆÌåÉÏ
+//é“å…·æ’æ§½ï¼Œæ§åˆ¶é“å…·çš„è‡ªåŠ¨æ’åˆ—å’Œè‡ªåŠ¨è£…é…é“å…·ç²¾çµï¼ŒæŒ‚è½½åœ¨sloté¢„åˆ¶ä½“ä¸Š
 public class Slot : MonoBehaviour
 {
     public Item slotItem;//
     public Image slotImage;
     public Text slotNum;
 
-    //µã»÷µÀ¾ßÔòÏÔÊ¾ÃèÊöĞÅÏ¢
+    //ç‚¹å‡»é“å…·åˆ™æ˜¾ç¤ºæè¿°ä¿¡æ¯
     public void ItemOnClicked()
     {
     

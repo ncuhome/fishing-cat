@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 
 
-//±³°ü¹ÜÀíÆ÷£¬¹ÒÔØÔÚCanvasÉÏ
+//èƒŒåŒ…ç®¡ç†å™¨ï¼ŒæŒ‚è½½åœ¨Canvasä¸Š
 public class InventoryManager : MonoBehaviour
 {
 
@@ -28,16 +28,16 @@ public class InventoryManager : MonoBehaviour
     private void OnEnable()
     {
         RefreshItem();
-        //µÀ¾ßÃèÊöÄ¬ÈÏÎª¿Õ
+        //é“å…·æè¿°é»˜è®¤ä¸ºç©º
         instance.itemInformation.text = "";
     }
 
-    //¿ØÖÆµÀ¾ßÃèÊöĞÅÏ¢µÄÏÔÊ¾
+    //æ§åˆ¶é“å…·æè¿°ä¿¡æ¯çš„æ˜¾ç¤º
     public static void UpdateItemInfo(string itemDescription)
     {
         instance.itemInformation.text = itemDescription;
     }
-    //Èç¹û±³°üÖĞ²»´æÔÚ¸ÃµÀ¾ß£¬ÔòÔÚ±³°üÃæ°åÖĞÌí¼Ó¸ÃµÀ¾ß
+    //å¦‚æœèƒŒåŒ…ä¸­ä¸å­˜åœ¨è¯¥é“å…·ï¼Œåˆ™åœ¨èƒŒåŒ…é¢æ¿ä¸­æ·»åŠ è¯¥é“å…·
     public static void CreateNewItem(Item item)
     {
         Slot newItem = Instantiate(instance.slotPrefab, instance.slotGrid.transform.position, Quaternion.identity);
@@ -49,17 +49,17 @@ public class InventoryManager : MonoBehaviour
     }
 
 
-    //¿ØÖÆµÀ¾ßÊıÄ¿µÄÏÔÊ¾±ä»¯
+    //æ§åˆ¶é“å…·æ•°ç›®çš„æ˜¾ç¤ºå˜åŒ–
     public static void RefreshItem()
     {
-        //ÏÈ´İ»Ù°üÖĞËùÓĞµÀ¾ß
+        //å…ˆæ‘§æ¯åŒ…ä¸­æ‰€æœ‰é“å…·
         for(int i = 0; i < instance.slotGrid.transform.childCount; i++)
         {
             //if (instance.slotGrid.transform.childCount == 0) break;
             Destroy(instance.slotGrid.transform.GetChild(i).gameObject);
         }
 
-        //±éÀúÖØĞÂÉú³É
+        //éå†é‡æ–°ç”Ÿæˆ
         for(int i = 0; i < instance.Bag.itemList.Count; i++)
         {
             CreateNewItem(instance.Bag.itemList[i]);

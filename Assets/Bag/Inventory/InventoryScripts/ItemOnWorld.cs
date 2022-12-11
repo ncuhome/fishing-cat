@@ -3,11 +3,11 @@ using System.Collections.Generic;
 using UnityEngine;
 
 
-//该脚步挂载在当前场景中可获取的道具上
+//璇ヨ剼姝ユ寕杞藉湪褰撳墠鍦烘櫙涓彲鑾峰彇鐨勯亾鍏蜂笂
 public class ItemOnWorld : MonoBehaviour
 {
     public Item thisItem;
-    public Inventory playerInventory;//目标背包
+    public Inventory playerInventory;//鐩爣鑳屽寘
 
 
 
@@ -29,10 +29,10 @@ public class ItemOnWorld : MonoBehaviour
         }
         else
         {
-            //触碰到道具默认数量加1
+            //瑙︾鍒伴亾鍏烽粯璁ゆ暟閲忓姞1
             thisItem.itemHeld += 1;
         }
-        //刷新背包
+        //鍒锋柊鑳屽寘
         InventoryManager.RefreshItem(); 
     }
 }

@@ -5,5 +5,5 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "Bag", menuName = "Inventory/New Inventory")]
 public class Inventory : ScriptableObject
 {
-    public List<Item> itemList = new List<Item>();//道具集合
+    public List<Item> itemList = new List<Item>();//閬撳叿闆嗗悎
 }
