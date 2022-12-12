@@ -4,6 +4,10 @@ using UnityEngine;
 
 public class DongHuaController : MonoBehaviour
 {
+    [Header("猫")]
+    [SerializeField]
+    private GameObject Cat;
+
     [Header("行走动画")]
     [SerializeField]
     private GameObject Cartoon0;
@@ -41,6 +45,8 @@ public class DongHuaController : MonoBehaviour
     int rdm;
     int random;
     int Last_random;
+    private float  MoveSpeed = 1f;
+    int Toward;
 
     // Start is called before the first frame update
     void Start()
@@ -55,14 +61,15 @@ public class DongHuaController : MonoBehaviour
         Cartoon7.SetActive(false);
         Rdm = Random.Range(4, 7);
         rdm = Random.Range(2, 3);
-        delayTime = System.DateTime.Now;
+        delayTime = Time.time;
         Debug.Log("开始");
     }
+
 
     // Update is called once per frame
     void Update()
     {
-        if (Cartoon0.activeInHierarchy == true && (Time.time - delayTime == Rdm))
+        if (Cartoon0.activeInHierarchy == true && (Time.time - delayTime > Rdm))
         {
             Debug.Log("换动作");
             Rdm = Random.Range(4, 7);
@@ -95,8 +102,30 @@ public class DongHuaController : MonoBehaviour
             Last_random = random;
             delayTime = Time.time;
         }
+        if (Cartoon0.activeInHierarchy == true)
+        {
+            if (-90 < Cat.transform.rotation.y && Cat.transform.rotation.y < 90)
+            {
+                Toward = -1;
+                Cat.transform.Translate(Toward * MoveSpeed, 0, 0);
+            }
+            else
+            {
+                Toward = 1;
+                Cat.transform.Translate(Toward * MoveSpeed, 0, 0);
+            }
+            if (Cat.transform.localPosition.x <100)
+            {
+                Cat.transform.rotation = Quaternion.Euler(0.0f, 180f, 0.0f);
+            }
+            else if(Cat.transform.localPosition.x>1000)
+            {
+                Cat.transform.rotation = Quaternion.Euler(0.0f, 0.0f, 0.0f);
+            }
+            
+        }
 
-        if (Cartoon0.activeInHierarchy== false && (Time.time - delayTime == rdm))
+        if (Cartoon0.activeInHierarchy== false && (Time.time - delayTime > rdm))
         {
             Debug.Log("开始行走");
             rdm = Random.Range(2, 3);
@@ -151,6 +180,7 @@ public class DongHuaController : MonoBehaviour
 
             }
             delayTime = Time.time;
+            Last_random = random;
         }
     }
 
