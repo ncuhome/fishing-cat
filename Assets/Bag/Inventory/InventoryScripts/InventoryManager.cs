@@ -40,10 +40,11 @@ public class InventoryManager : MonoBehaviour
     //如果背包中不存在该道具，则在背包面板中添加该道具
     public static void CreateNewItem(Item item)
     {
+        if (item.itemHeld <= 0) return;
         Slot newItem = Instantiate(instance.slotPrefab, instance.slotGrid.transform.position, Quaternion.identity);
         newItem.gameObject.transform.SetParent(instance.slotGrid.transform);
         newItem.slotItem = item;
-        if (newItem.slotItem.itemHeld == 0) newItem.slotItem.itemHeld = 1;
+        //if (newItem.slotItem.itemHeld == 0) newItem.slotItem.itemHeld = 1;
         newItem.slotImage.sprite = item.itemImage;
         newItem.slotNum.text = item.itemHeld.ToString();
     }
