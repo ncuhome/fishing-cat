@@ -1,4 +1,4 @@
-using System.Collections;
+ï»¿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -13,8 +13,8 @@ public class ShowShop : MonoBehaviour
             {
                 int a = i + 1;
                 lattice = GameObject.Find("p" + a);
-                lattice.transform.Find("Î´¹ºÂò").gameObject.SetActive(false);
-                lattice.transform.Find("¹ºÂò").gameObject.SetActive(true);
+                lattice.transform.Find("æœªè´­ä¹°").gameObject.SetActive(false);
+                lattice.transform.Find("è´­ä¹°").gameObject.SetActive(true);
             }
         }
     }

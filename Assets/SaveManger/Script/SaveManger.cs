@@ -1,4 +1,4 @@
-using System.Collections;
+ï»¿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using System.IO;
@@ -10,36 +10,36 @@ using Unity.VisualScripting;
 public class SaveManger : MonoBehaviour
 {
     /*
-   ÏÂÃæÊÇ»á·¢ÉúµÄ¸Ä±äµÄÁ¿ (»î±äÁ¿)
+   ä¸‹é¢æ˜¯ä¼šå‘ç”Ÿçš„æ”¹å˜çš„é‡ (æ´»å˜é‡)
    */
     public int catFood;
 
     public int fishingRodNumber = 0;
 
-    public int[] itemPrice = new int[totalNumberOfItems];   //ÎïÆ·µÄÓµÓĞÊıÁ¿
+    public int[] itemPrice = new int[totalNumberOfItems];   //ç‰©å“çš„æ‹¥æœ‰æ•°é‡
     public bool[] itemHeld = new bool[totalNumberOfItems];
     public string[] itemName = new string[totalNumberOfItems];
     public string[] itemIntroduction = new string[totalNumberOfItems];
 
     /*
-    ÏÂÃæÊÇ²»»á·¢ÉúµÄ¸Ä±äµÄÁ¿ (ËÀ±äÁ¿)
+    ä¸‹é¢æ˜¯ä¸ä¼šå‘ç”Ÿçš„æ”¹å˜çš„é‡ (æ­»å˜é‡)
     */
 
 
 
     /*
-   ÏÂÃæÊÇÆäËûµÄÒ»Ğ©±äÁ¿
+   ä¸‹é¢æ˜¯å…¶ä»–çš„ä¸€äº›å˜é‡
    */
-    public SaveManger saveManger = Instance;  //´æ´¢Êı¾İµÄ¶ÔÏó(saveMangerÔ¤ÖÆÌå)
+    public SaveManger saveManger = Instance;  //å­˜å‚¨æ•°æ®çš„å¯¹è±¡(saveMangeré¢„åˆ¶ä½“)
     public static int totalNumberOfItems = 16;
-    public int test = 0;           //²âÊÔ±äÁ¿
+    public int test = 0;           //æµ‹è¯•å˜é‡
 
 
     /*
-    ÏÂÃæÊÇº¯Êı²¿·Ö
+    ä¸‹é¢æ˜¯å‡½æ•°éƒ¨åˆ†
     */
-    public static SaveManger Instance; //ÉèÖÃµ¥Àı
-    private void Awake()  //ÉèÖÃµ¥Àı
+    public static SaveManger Instance; //è®¾ç½®å•ä¾‹
+    private void Awake()  //è®¾ç½®å•ä¾‹
     {
         if (Instance == null)
         {
@@ -51,7 +51,7 @@ public class SaveManger : MonoBehaviour
             Destroy(this);
         }
     }
-    private void Start()  //ÉèÖÃµ¥Àı
+    private void Start()  //è®¾ç½®å•ä¾‹
     {
         saveManger = Instance;
         for (int i = 0; i < totalNumberOfItems; i++)
@@ -60,20 +60,20 @@ public class SaveManger : MonoBehaviour
             itemHeld[i] = false;
         }
     }
-    public void SaveGame()  //´æ´¢Êı¾İº¯Êı
+    public void SaveGame()  //å­˜å‚¨æ•°æ®å‡½æ•°
     {
-        Debug.Log("Êı¾İ´¢´æÔÚ" + Application.persistentDataPath);  //Êä³öÊı¾İµÄ´¢´æÎ»ÖÃ
-        if(!Directory.Exists(Application.dataPath + "/game_SaveDate"))  //Èç¹ûÃ»ÓĞÕÒµ½Êı¾İ´æ´¢ÎÄ¼ş¾Í´´½¨Ò»¸ö
+        Debug.Log("æ•°æ®å‚¨å­˜åœ¨" + Application.persistentDataPath);  //è¾“å‡ºæ•°æ®çš„å‚¨å­˜ä½ç½®
+        if(!Directory.Exists(Application.dataPath + "/game_SaveDate"))  //å¦‚æœæ²¡æœ‰æ‰¾åˆ°æ•°æ®å­˜å‚¨æ–‡ä»¶å°±åˆ›å»ºä¸€ä¸ª
         {
             Directory.CreateDirectory(Application.persistentDataPath + "/game_SaveDate");
         }
-        BinaryFormatter formatter = new BinaryFormatter();  //¶ş½øÖÆ±äÁ¿
-        FileStream file = File.Create(Application.persistentDataPath + "/game_SaveDate/save.txt"); //ÎÄ¼ş
-        var json = JsonUtility.ToJson(saveManger);  //°ÑÒª´æ´¢µÄ±äÁ¿×ª»»Îªjson
-        formatter.Serialize(file, json);  //°Ñjson×ªÎª¶ş½øÖÆ´æÈëÎÄ¼ş
-        file.Close();  //±£´æĞŞ¸Ä
+        BinaryFormatter formatter = new BinaryFormatter();  //äºŒè¿›åˆ¶å˜é‡
+        FileStream file = File.Create(Application.persistentDataPath + "/game_SaveDate/save.txt"); //æ–‡ä»¶
+        var json = JsonUtility.ToJson(saveManger);  //æŠŠè¦å­˜å‚¨çš„å˜é‡è½¬æ¢ä¸ºjson
+        formatter.Serialize(file, json);  //æŠŠjsonè½¬ä¸ºäºŒè¿›åˆ¶å­˜å…¥æ–‡ä»¶
+        file.Close();  //ä¿å­˜ä¿®æ”¹
     }
-    public void LoadGame()  //¶ÁÈ¡Êı¾İº¯Êı
+    public void LoadGame()  //è¯»å–æ•°æ®å‡½æ•°
     { 
         BinaryFormatter bf = new BinaryFormatter();
         if (File.Exists(Application.persistentDataPath + "/game_SaveDate/save.txt"))
