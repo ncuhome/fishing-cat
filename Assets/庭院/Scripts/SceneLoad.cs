@@ -16,7 +16,7 @@ public class SceneLoad : MonoBehaviour
     {
 
     }
-    public void OnStartButtonClick()
+     public void OnStartButtonClick()
     {
         SceneManager.LoadScene(1);
     }
