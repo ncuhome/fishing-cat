@@ -1,5 +1,9 @@
 fileFormatVersion: 2
+<<<<<<<< HEAD:Assets/庭院/20221207-190449.jpg.meta
 guid: 5ede1034934a47f48ac28bee8536d977
+========
+guid: 4b4ca812d06d0044fb3db37ae88485b7
+>>>>>>>> b6769bb6513b8f1e1aef09b1d0f3cd5708587eab:Assets/Bag/Sprites/Inventory_Box 1.png.meta
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -101,6 +105,7 @@ TextureImporter:
     overridden: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
+<<<<<<<< HEAD:Assets/庭院/20221207-190449.jpg.meta
   - serializedVersion: 3
     buildTarget: Android
     maxTextureSize: 2048
@@ -137,6 +142,8 @@ TextureImporter:
     overridden: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
+========
+>>>>>>>> b6769bb6513b8f1e1aef09b1d0f3cd5708587eab:Assets/Bag/Sprites/Inventory_Box 1.png.meta
   spriteSheet:
     serializedVersion: 2
     sprites: []

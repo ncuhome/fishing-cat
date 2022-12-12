@@ -1,5 +1,9 @@
 fileFormatVersion: 2
+<<<<<<<< HEAD:Assets/Map/主界面(1)/UI 气泡）.png.meta
 guid: 4075ce15ec849ea4d9d892b97d8a6aa7
+========
+guid: 285d8ceb889ec374cadd80abf9278472
+>>>>>>>> b6769bb6513b8f1e1aef09b1d0f3cd5708587eab:Assets/Bag/Sprites/逗猫棒 木棒 木棍树枝.png.meta
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -101,6 +105,7 @@ TextureImporter:
     overridden: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
+<<<<<<<< HEAD:Assets/Map/主界面(1)/UI 气泡）.png.meta
   - serializedVersion: 3
     buildTarget: Android
     maxTextureSize: 2048
@@ -137,6 +142,8 @@ TextureImporter:
     overridden: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
+========
+>>>>>>>> b6769bb6513b8f1e1aef09b1d0f3cd5708587eab:Assets/Bag/Sprites/逗猫棒 木棒 木棍树枝.png.meta
   spriteSheet:
     serializedVersion: 2
     sprites: []

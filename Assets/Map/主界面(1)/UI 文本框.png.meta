@@ -1,5 +1,9 @@
 fileFormatVersion: 2
+<<<<<<<< HEAD:Assets/Map/主界面(1)/UI 文本框.png.meta
 guid: 4b5a5df270d57644fb4bddacbf47f38d
+========
+guid: c045f50fcb193f647ad3466a037da7c1
+>>>>>>>> b6769bb6513b8f1e1aef09b1d0f3cd5708587eab:Assets/Bag/Sprites/UI 文本框.png.meta
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -101,6 +105,7 @@ TextureImporter:
     overridden: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
+<<<<<<<< HEAD:Assets/Map/主界面(1)/UI 文本框.png.meta
   - serializedVersion: 3
     buildTarget: Android
     maxTextureSize: 2048
@@ -137,6 +142,8 @@ TextureImporter:
     overridden: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
+========
+>>>>>>>> b6769bb6513b8f1e1aef09b1d0f3cd5708587eab:Assets/Bag/Sprites/UI 文本框.png.meta
   spriteSheet:
     serializedVersion: 2
     sprites: []

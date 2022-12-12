@@ -1,8 +1,12 @@
 fileFormatVersion: 2
+<<<<<<<< HEAD:Assets/Cat/纸箱.anim.meta
 guid: b75cf99ead992344b873553bc5c3d117
 NativeFormatImporter:
+========
+guid: 70538e270a0f6324da890ba6e69b780f
+PrefabImporter:
+>>>>>>>> b6769bb6513b8f1e1aef09b1d0f3cd5708587eab:Assets/Bag/Sprites/UI 功能图标_0.prefab.meta
   externalObjects: {}
-  mainObjectFileID: 7400000
   userData: 
   assetBundleName: 
   assetBundleVariant: 

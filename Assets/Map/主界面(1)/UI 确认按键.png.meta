@@ -1,5 +1,9 @@
 fileFormatVersion: 2
+<<<<<<<< HEAD:Assets/Map/主界面(1)/UI 确认按键.png.meta
 guid: de9d03bc593ad3341925d1ee935cb14b
+========
+guid: f86e7a222e2d880419459057e247a30e
+>>>>>>>> b6769bb6513b8f1e1aef09b1d0f3cd5708587eab:Assets/Bag/Sprites/UI 确认按键.png.meta
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -33,7 +37,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 1
+    filterMode: 0
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -42,7 +46,7 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -70,7 +74,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 1
+    textureCompression: 0
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -101,6 +105,7 @@ TextureImporter:
     overridden: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
+<<<<<<<< HEAD:Assets/Map/主界面(1)/UI 确认按键.png.meta
   - serializedVersion: 3
     buildTarget: Android
     maxTextureSize: 2048
@@ -137,9 +142,32 @@ TextureImporter:
     overridden: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
+========
+>>>>>>>> b6769bb6513b8f1e1aef09b1d0f3cd5708587eab:Assets/Bag/Sprites/UI 确认按键.png.meta
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: "UI \u786E\u8BA4\u6309\u952E_0"
+      rect:
+        serializedVersion: 2
+        x: 627
+        y: 415
+        width: 441
+        height: 175
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ca68ca5f375ec0a49b410d56f972d37a
+      internalID: 582922733
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
@@ -150,7 +178,8 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      "UI \u786E\u8BA4\u6309\u952E_0": 582922733
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0
