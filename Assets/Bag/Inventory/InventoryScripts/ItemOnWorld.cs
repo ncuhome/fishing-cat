@@ -11,13 +11,10 @@ public class ItemOnWorld : MonoBehaviour
 
 
 
-    private void OnTriggerEnter2D(Collider2D collision)
+    public void Start()
     {
-        if(collision.gameObject.CompareTag("Player"))
-        {
-            AddNewItem();
-            Destroy(gameObject);
-        }
+        if(thisItem.itemHeld > 0)
+        AddNewItem();
     }
 
     public void AddNewItem()
@@ -26,11 +23,6 @@ public class ItemOnWorld : MonoBehaviour
         {
             playerInventory.itemList.Add(thisItem);
             //InventoryManager.CreateNewItem(thisItem);
-        }
-        else
-        {
-            //触碰到道具默认数量加1
-            thisItem.itemHeld += 1;
         }
         //刷新背包
         InventoryManager.RefreshItem(); 

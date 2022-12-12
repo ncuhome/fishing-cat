@@ -44,5 +44,43 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f4f56493154a6ae4abf4a3a99c5df8e0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  saveManger: {fileID: 6978363045421627218}
-  ceshi: 0
+  catFood: 0
+  fishingRodNumber: 0
+  itemPrice: 00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
+  itemHeld: 00000000000000000000000000000000
+  itemName:
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  itemIntroduction:
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  saveManager: {fileID: 6978363045421627218}
+  test: 0
