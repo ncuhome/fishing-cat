@@ -15,7 +15,12 @@ public class SaveManger : MonoBehaviour
     public int catFood;
 
     public int fishingRodNumber = 0;
-    public int[] itemHeld = new int[totalNumberOfItems];   //物品的拥有数量
+
+    public int[] itemPrice = new int[totalNumberOfItems];   //物品的拥有数量
+    public bool[] itemHeld = new bool[totalNumberOfItems];
+    public string[] itemName = new string[totalNumberOfItems];
+    public string[] itemIntroduction = new string[totalNumberOfItems];
+
     /*
     下面是不会发生的改变的量 (死变量)
     */
@@ -26,7 +31,7 @@ public class SaveManger : MonoBehaviour
    下面是其他的一些变量
    */
     public SaveManger saveManger = Instance;  //存储数据的对象(saveManger预制体)
-    public static int totalNumberOfItems = 10;
+    public static int totalNumberOfItems = 16;
     public int test = 0;           //测试变量
 
 
@@ -49,6 +54,11 @@ public class SaveManger : MonoBehaviour
     private void Start()  //设置单例
     {
         saveManger = Instance;
+        for (int i = 0; i < totalNumberOfItems; i++)
+        {
+            itemPrice[i] = 100;
+            itemHeld[i] = false;
+        }
     }
     public void SaveGame()  //存储数据函数
     {
