@@ -62,6 +62,7 @@ public class DongHuaController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        Debug.Log("Caturn"+Cartoon0.activeInHierarchy);
         if (Cartoon0.activeInHierarchy == true && (Time.time - delayTime == Rdm))
         {
             Debug.Log("换动作");
