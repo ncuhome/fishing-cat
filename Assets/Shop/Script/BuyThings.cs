@@ -14,11 +14,11 @@ public class BuyThings : MonoBehaviour
         Item item = Resources.Load<Item>("Item/" + name);
         Debug.Log(item.itemPrice);
         price = item.itemPrice;
-        if (SaveManger.Instance.catFood - price >= 0)
+        if (SaveManager.Instance.catFood - price >= 0)
         {
-            SaveManger.Instance.catFood -= price;
-            SaveManger.Instance.itemHeld[item.itemID] += 1;
-            item.itemHeld = SaveManger.Instance.itemHeld[item.itemID] += 1; ;
+            SaveManager.Instance.catFood -= price;
+            SaveManager.Instance.itemHeld[item.itemID] += 1;
+            item.itemHeld = SaveManager.Instance.itemHeld[item.itemID] += 1; ;
         }
 
     }   
