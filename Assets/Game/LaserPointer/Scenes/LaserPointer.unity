@@ -176,7 +176,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 732d1a6e1b0a6bb43984874e091ae78d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  light: {fileID: 71394296}
+  lighter: {fileID: 71394296}
   prompt: {fileID: 1362024472}
   self: {fileID: 0}
 --- !u!114 &11910475
@@ -2562,7 +2562,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 732d1a6e1b0a6bb43984874e091ae78d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  light: {fileID: 71394296}
+  lighter: {fileID: 71394296}
   prompt: {fileID: 1362024472}
   self: {fileID: 1370050760}
 --- !u!114 &1486567012

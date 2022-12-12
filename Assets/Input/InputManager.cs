@@ -29,7 +29,7 @@ public class InputManager
         if (pointX < -1) { pointX = -1.0f; }
 
         float vecX = pointerWorldPos.x - backgroundPos.x;
-        backgroundPos.x += (maxRadiu > vecX) ? vecX : maxRadiu;
+        // backgroundPos.x += (maxRadiu > vecX) ? vecX : maxRadiu;
     }
 
     public void OnEndDrag(PointerEventData eventData)
