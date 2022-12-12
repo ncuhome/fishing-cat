@@ -18,11 +18,11 @@ public class BuyThings : MonoBehaviour
     {
         Debug.Log(1);
         buyId = int.Parse(this.transform.parent.gameObject.name);
-        if (SaveManger.Instance.itemHeld[buyId - 1] == false)
+        if (GlobalSaveManager.instance.saveManager.itemHeld[buyId - 1] == false)
         {
-            SaveManger.Instance.catFood -= SaveManger.Instance.itemPrice[buyId - 1];
-            SaveManger.Instance.itemHeld[buyId - 1] = true;
-            sign.text = "�㹺����" + SaveManger.Instance.itemName[buyId - 1];
+            GlobalSaveManager.instance.saveManager.catFood -= GlobalSaveManager.instance.saveManager.itemPrice[buyId - 1];
+            GlobalSaveManager.instance.saveManager.itemHeld[buyId - 1] = true;
+            sign.text = "锟姐购锟斤拷锟斤拷" + GlobalSaveManager.instance.saveManager.itemName[buyId - 1];
             sign.gameObject.SetActive(true);
             Invoke("Wait", 1.5f);
         }

@@ -9,31 +9,37 @@ using Unity.VisualScripting;
 
 public class SaveManager : MonoBehaviour
 {
-    //ä¸‹é¢æ˜¯ä¼šå‘ç”Ÿçš„æ”¹å˜çš„é‡ (æ´»å˜é‡)
-    public Inventory Bag;
-    public Item sword;
-    public Item shoes;
-    public Item armor;
-    public int[] itemHelds = new int[10];
-
-
+    /*
+   ÏÂÃæÊÇ»á·¢ÉúµÄ¸Ä±äµÄÁ¿ (»î±äÁ¿)
+   */
     public int catFood;
+
     public int fishingRodNumber = 0;
-    public int[] itemHeld = new int[totalNumberOfItems];   //ç‰©å“çš„æ‹¥æœ‰æ•°é‡
 
-    //ä¸‹é¢æ˜¯ä¸ä¼šå‘ç”Ÿçš„æ”¹å˜çš„é‡ (æ­»å˜é‡)
+    public int[] itemPrice = new int[totalNumberOfItems];   //ÎïÆ·µÄÓµÓĞÊıÁ¿
+    public bool[] itemHeld = new bool[totalNumberOfItems];
+    public string[] itemName = new string[totalNumberOfItems];
+    public string[] itemIntroduction = new string[totalNumberOfItems];
+
+    /*
+    ÏÂÃæÊÇ²»»á·¢ÉúµÄ¸Ä±äµÄÁ¿ (ËÀ±äÁ¿)
+    */
 
 
 
+    /*
+   ÏÂÃæÊÇÆäËûµÄÒ»Ğ©±äÁ¿
+   */
+    public SaveManager saveManager = Instance;  //´æ´¢Êı¾İµÄ¶ÔÏó(saveManagerÔ¤ÖÆÌå)
+    public static int totalNumberOfItems = 16;
+    public int test = 0;           //²âÊÔ±äÁ¿
 
-    //ä¸‹é¢æ˜¯å…¶ä»–çš„ä¸€äº›å˜é‡
-    // public SaveManager saveManager;  //å­˜å‚¨æ•°æ®çš„å¯¹è±¡(saveManageré¢„åˆ¶ä½“)
-    public static int totalNumberOfItems = 10;
-    public int test = 0;           //æµ‹è¯•å˜é‡
 
-    public static SaveManager Instance; //è®¾ç½®å•ä¾‹
-
-    private void Awake()  //è®¾ç½®å•ä¾‹
+    /*
+    ÏÂÃæÊÇº¯Êı²¿·Ö
+    */
+    public static SaveManager Instance; //ÉèÖÃµ¥Àı
+    private void Awake()  //ÉèÖÃµ¥Àı
     {
         if (Instance == null)
         {
@@ -44,35 +50,36 @@ public class SaveManager : MonoBehaviour
         {
             Destroy(this);
         }
-        LoadGame();
     }
-
-    // private void Start()  //è®¾ç½®å•ä¾‹
-    // {
-    //     saveManager = Instance;
-    // }
-
-    public void SaveGame()  //å­˜å‚¨æ•°æ®å‡½æ•°
+    private void Start()  //ÉèÖÃµ¥Àı
     {
-        Debug.Log("æ•°æ®å‚¨å­˜åœ¨" + Application.persistentDataPath);  //è¾“å‡ºæ•°æ®çš„å‚¨å­˜ä½ç½®
-        if (!Directory.Exists(Application.dataPath + "/game_SaveDate"))  //å¦‚æœæ²¡æœ‰æ‰¾åˆ°æ•°æ®å­˜å‚¨æ–‡ä»¶å°±åˆ›å»ºä¸€ä¸ª
+        saveManager = Instance;
+        for (int i = 0; i < totalNumberOfItems; i++)
+        {
+            itemPrice[i] = 100;
+            itemHeld[i] = false;
+        }
+    }
+    public void SaveGame()  //´æ´¢Êı¾İº¯Êı
+    {
+        Debug.Log("Êı¾İ´¢´æÔÚ" + Application.persistentDataPath);  //Êä³öÊı¾İµÄ´¢´æÎ»ÖÃ
+        if(!Directory.Exists(Application.dataPath + "/game_SaveDate"))  //Èç¹ûÃ»ÓĞÕÒµ½Êı¾İ´æ´¢ÎÄ¼ş¾Í´´½¨Ò»¸ö
         {
             Directory.CreateDirectory(Application.persistentDataPath + "/game_SaveDate");
         }
-        BinaryFormatter formatter = new BinaryFormatter();  //äºŒè¿›åˆ¶å˜é‡
-        FileStream file = File.Create(Application.persistentDataPath + "/game_SaveDate/save.txt"); //æ–‡ä»¶
-        var json = JsonUtility.ToJson(Instance);  //æŠŠè¦å­˜å‚¨çš„å˜é‡è½¬æ¢ä¸ºjson
-        formatter.Serialize(file, json);  //æŠŠjsonè½¬ä¸ºäºŒè¿›åˆ¶å­˜å…¥æ–‡ä»¶
-        file.Close();  //ä¿å­˜ä¿®æ”¹
+        BinaryFormatter formatter = new BinaryFormatter();  //¶ş½øÖÆ±äÁ¿
+        FileStream file = File.Create(Application.persistentDataPath + "/game_SaveDate/save.txt"); //ÎÄ¼ş
+        var json = JsonUtility.ToJson(saveManager);  //°ÑÒª´æ´¢µÄ±äÁ¿×ª»»Îªjson
+        formatter.Serialize(file, json);  //°Ñjson×ªÎª¶ş½øÖÆ´æÈëÎÄ¼ş
+        file.Close();  //±£´æĞŞ¸Ä
     }
-
-    public void LoadGame()  //è¯»å–æ•°æ®å‡½æ•°
-    {
+    public void LoadGame()  //¶ÁÈ¡Êı¾İº¯Êı
+    { 
         BinaryFormatter bf = new BinaryFormatter();
         if (File.Exists(Application.persistentDataPath + "/game_SaveDate/save.txt"))
         {
-            FileStream file = File.Open(Application.persistentDataPath + "/game_SaveDate/save.txt", FileMode.Open);
-            JsonUtility.FromJsonOverwrite((string)bf.Deserialize(file), Instance);
+            FileStream file = File.Open(Application.persistentDataPath + "/game_SaveDate/save.txt",FileMode.Open);
+            JsonUtility.FromJsonOverwrite((string)bf.Deserialize(file), saveManager);
             file.Close();
         }
     }
