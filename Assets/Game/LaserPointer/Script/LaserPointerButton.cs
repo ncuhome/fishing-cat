@@ -5,7 +5,7 @@ using UnityEngine.EventSystems;
 
 public class LaserPointerButton : MonoBehaviour
 {
-    public GameObject light;
+    public GameObject lighter;
     public GameObject prompt;
     public static PopAnimation pop;
     public GameObject self;
@@ -43,12 +43,12 @@ public class LaserPointerButton : MonoBehaviour
         if(Cat.laserPointer == true)
         {
             Cat.laserPointer = false;
-            light.gameObject.SetActive(false);
+            lighter.gameObject.SetActive(false);
         }
         else if (Cat.laserPointer == false)
         {
             Cat.laserPointer = true;
-            light.gameObject.SetActive(true);
+            lighter.gameObject.SetActive(true);
         }
         Cat.needTime = UnityEngine.Random.Range(10f, 50f) / 10;
     }
