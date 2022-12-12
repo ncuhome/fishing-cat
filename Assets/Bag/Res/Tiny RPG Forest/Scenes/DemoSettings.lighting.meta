@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+<<<<<<< HEAD:Assets/Res/Tiny RPG Forest/Scenes/DemoSettings.lighting.meta
+guid: ac97ec91a473e10489caf0e9411ada2e
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 4890085278179872738
+=======
+guid: 86f264d734b97d64a826f0c4d73b71ae
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 0
+>>>>>>> a9b49885f43c20f77c4716fe0632f3f8c7e7e7c4:Assets/Bag/Res/Tiny RPG Forest/Scenes/DemoSettings.lighting.meta
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
