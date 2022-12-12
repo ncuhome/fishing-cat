@@ -30,36 +30,35 @@ public class SaveManager : MonoBehaviour
     /*
    下面是其他的一些变量
    */
-    public SaveManager saveManager = Instance;  //存储数据的对象(saveManager预制体)
+    public SaveManager saveManager;  //存储数据的对象(saveManger预制体)
     public static int totalNumberOfItems = 16;
     public int test = 0;           //测试变量
 
 
-    /*
-    下面是函数部分
-    */
-    public static SaveManager Instance; //设置单例
-    private void Awake()  //设置单例
-    {
-        if (Instance == null)
-        {
-            Instance = this;
-            DontDestroyOnLoad(this);
-        }
-        else
-        {
-            Destroy(this);
-        }
-    }
+    // public static SaveManager Instance;
+    // private void Awake()
+    // {
+    //     if (Instance == null)
+    //     {
+    //         Instance = this;
+    //         DontDestroyOnLoad(this);
+    //     }
+    //     else
+    //     {
+    //         Destroy(this);
+    //     }
+    // }
+
     private void Start()  //设置单例
     {
-        saveManager = Instance;
+        // saveManager = Instance;
         for (int i = 0; i < totalNumberOfItems; i++)
         {
             itemPrice[i] = 100;
             itemHeld[i] = false;
         }
     }
+
     public void SaveGame()  //存储数据函数
     {
         Debug.Log("数据储存在" + Application.persistentDataPath);  //输出数据的储存位置

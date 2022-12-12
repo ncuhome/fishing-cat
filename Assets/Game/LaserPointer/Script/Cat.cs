@@ -1,4 +1,4 @@
-using System.Collections;
+ï»¿using System.Collections;
 using System.Collections.Generic;
 using Unity.Mathematics;
 using Unity.VisualScripting;
@@ -10,14 +10,14 @@ public class Cat : MonoBehaviour, IPointerDownHandler
 {
     int face = -1;
     private Rigidbody2D rb;
-    public static bool laserPointer = false;  //¼¤¹â±ÊÊÇ·ñ¿ª×Å
+    public static bool laserPointer = false;  //æ¿€å…‰ç¬”æ˜¯å¦å¼€ç€
     public static bool jump = false;
     private float waitTime = 0;
     public static float needTime;
     Animator animator;
-    public static int feeling = 100;  //ĞÄÇéÖµ
-    public static int stamina = 100;  //ÌåÁ¦Öµ
-    public static bool beCaught = false; //Ã¨ßäÊÇ·ñÄÜ±»×¥µ½ 
+    public static int feeling = 100;  //å¿ƒæƒ…å€¼
+    public static int stamina = 100;  //ä½“åŠ›å€¼
+    public static bool beCaught = false; //çŒ«å’ªæ˜¯å¦èƒ½è¢«æŠ“åˆ° 
     public static PopAnimation popAnimation;
     public static GameObject tili;
     private Image image;
@@ -34,10 +34,10 @@ public class Cat : MonoBehaviour, IPointerDownHandler
         rb = this.GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>(); 
         popAnimation = GetComponent<PopAnimation>();
-        tili = GameObject.Find("ÌåÁ¦ºÄ¾¡");
+        tili = GameObject.Find("ä½“åŠ›è€—å°½");
         tili.SetActive(false);
-        image = GameObject.Find("StrengthÑªÌõ").GetComponent<Image>();
-        image1 = GameObject.Find("FeelingÑªÌõ").GetComponent<Image>();
+        image = GameObject.Find("Strengthè¡€æ¡").GetComponent<Image>();
+        image1 = GameObject.Find("Feelingè¡€æ¡").GetComponent<Image>();
     }
 
     void Update()
@@ -47,7 +47,7 @@ public class Cat : MonoBehaviour, IPointerDownHandler
             jump = true;
             animator.SetBool("jump", true);
         }
-        else if (math.abs(rb.velocity.y) <= 0.1f && this.transform.localPosition.y < 0 )  //ÂäµØ
+        else if (math.abs(rb.velocity.y) <= 0.1f && this.transform.localPosition.y < 0 )  //è½åœ°
         {
             jump = false;
             animator.SetBool("jump", false);
@@ -88,28 +88,28 @@ public class Cat : MonoBehaviour, IPointerDownHandler
         Debug.Log(stamina);
         if (Cat.beCaught)
         {
-            Debug.Log("Ã¨ßä±»×¥µ½ÁË");
+            Debug.Log("çŒ«å’ªè¢«æŠ“åˆ°äº†");
             popAnimation.ShowShopOnClick();
         }
     }
     public void Dropblood(int everyChange)
     {
-        //ÅĞ¶ÏÊÇ·ñ¿ªÊ¼¶ÁÌõ
+        //åˆ¤æ–­æ˜¯å¦å¼€å§‹è¯»æ¡
         if (isPlay)
         {
-            //Ê¹timer¸ù¾İÊ±¼äÔö³¤
+            //ä½¿timeræ ¹æ®æ—¶é—´å¢é•¿
             timer += Time.deltaTime;
             Jindu -= (Time.deltaTime / duration) * everyChange / 100;
-            //ĞŞ¸ÄFillAmountµÄÖµ
-            //£¨Ê¹µ±Ç°Ê±¼äÕ¼È«²¿Ê±¼äµÄ±ÈÀıÎªFillAmountÖĞ0µ½1Ö®¼äµÄÖµ£©
+            //ä¿®æ”¹FillAmountçš„å€¼
+            //ï¼ˆä½¿å½“å‰æ—¶é—´å å…¨éƒ¨æ—¶é—´çš„æ¯”ä¾‹ä¸ºFillAmountä¸­0åˆ°1ä¹‹é—´çš„å€¼ï¼‰
             image.fillAmount = Mathf.Lerp(0, 1, Jindu);
 
-            //¼ÆÊ±Æ÷
+            //è®¡æ—¶å™¨
             if (timer >= duration)
             {
-                //Í£Ö¹¶ÁÌõ
+                //åœæ­¢è¯»æ¡
                 isPlay = false;
-                //½«timer»¹Ô­Îª0£¬ÎªÏÂÒ»´Î¼ÆÊ±×ö×¼±¸
+                //å°†timerè¿˜åŸä¸º0ï¼Œä¸ºä¸‹ä¸€æ¬¡è®¡æ—¶åšå‡†å¤‡
                 timer = 0;
             }
         }
@@ -117,22 +117,22 @@ public class Cat : MonoBehaviour, IPointerDownHandler
     }
     public void DropFeeling(int everyChange)
     {
-        //ÅĞ¶ÏÊÇ·ñ¿ªÊ¼¶ÁÌõ
+        //åˆ¤æ–­æ˜¯å¦å¼€å§‹è¯»æ¡
         if (isPlay1)
         {
-            //Ê¹timer¸ù¾İÊ±¼äÔö³¤
+            //ä½¿timeræ ¹æ®æ—¶é—´å¢é•¿
             timer1 += Time.deltaTime;
             Jindu1 -= (Time.deltaTime / duration) * everyChange / 100;
-            //ĞŞ¸ÄFillAmountµÄÖµ
-            //£¨Ê¹µ±Ç°Ê±¼äÕ¼È«²¿Ê±¼äµÄ±ÈÀıÎªFillAmountÖĞ0µ½1Ö®¼äµÄÖµ£©
+            //ä¿®æ”¹FillAmountçš„å€¼
+            //ï¼ˆä½¿å½“å‰æ—¶é—´å å…¨éƒ¨æ—¶é—´çš„æ¯”ä¾‹ä¸ºFillAmountä¸­0åˆ°1ä¹‹é—´çš„å€¼ï¼‰
             image1.fillAmount = Mathf.Lerp(0, 1, Jindu1);
 
-            //¼ÆÊ±Æ÷
+            //è®¡æ—¶å™¨
             if (timer1 >= duration)
             {
-                //Í£Ö¹¶ÁÌõ
+                //åœæ­¢è¯»æ¡
                 isPlay1 = false;
-                //½«timer»¹Ô­Îª0£¬ÎªÏÂÒ»´Î¼ÆÊ±×ö×¼±¸
+                //å°†timerè¿˜åŸä¸º0ï¼Œä¸ºä¸‹ä¸€æ¬¡è®¡æ—¶åšå‡†å¤‡
                 timer1 = 0;
             }
         }

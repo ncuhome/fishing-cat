@@ -1,22 +1,22 @@
-using System.Collections;
+ï»¿using System.Collections;
 using System.Collections.Generic;
 using System.Text.RegularExpressions;
 using UnityEngine;
 
 public class ButtonManger : MonoBehaviour
 {
-   public void FreeCat()  //µã»÷ ³É¹¦×¥µ½½çÃæ ·Å»Ø×ÔÈ»Ñ¡Ïî Ö´ĞĞµÄº¯Êı
+   public void FreeCat()  //ç‚¹å‡» æˆåŠŸæŠ“åˆ°ç•Œé¢ æ”¾å›è‡ªç„¶é€‰é¡¹ æ‰§è¡Œçš„å‡½æ•°
     {
-        Debug.Log("·Å»Ø×ÔÈ»");
+        Debug.Log("æ”¾å›è‡ªç„¶");
     }
-    public void TakeBack()  //µã»÷ ³É¹¦×¥µ½½çÃæ ´ø»ØÃ¨ÉáÑ¡Ïî Ö´ĞĞµÄº¯Êı
+    public void TakeBack()  //ç‚¹å‡» æˆåŠŸæŠ“åˆ°ç•Œé¢ å¸¦å›çŒ«èˆé€‰é¡¹ æ‰§è¡Œçš„å‡½æ•°
     {
-        Debug.Log("´ø»ØÃ¨Éá");
+        Debug.Log("å¸¦å›çŒ«èˆ");
     }
 
-    public void GoBack()  //µã»÷ Ê§°Ü½çÃæ »Øµ½²İÔ­Ñ¡Ïî Ö´ĞĞµÄº¯Êı
+    public void GoBack()  //ç‚¹å‡» å¤±è´¥ç•Œé¢ å›åˆ°è‰åŸé€‰é¡¹ æ‰§è¡Œçš„å‡½æ•°
     {
-        Debug.Log("»Øµ½²İÔ­");
+        Debug.Log("å›åˆ°è‰åŸ");
     }
 
 }

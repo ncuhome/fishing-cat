@@ -1,4 +1,4 @@
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting.Dependencies.Sqlite;
 using UnityEditor.ShortcutManagement;
@@ -22,7 +22,7 @@ public class BuyThings : MonoBehaviour
         {
             GlobalSaveManager.instance.saveManager.catFood -= GlobalSaveManager.instance.saveManager.itemPrice[buyId - 1];
             GlobalSaveManager.instance.saveManager.itemHeld[buyId - 1] = true;
-            sign.text = "锟姐购锟斤拷锟斤拷" + GlobalSaveManager.instance.saveManager.itemName[buyId - 1];
+            sign.text = "你购买了" + GlobalSaveManager.instance.saveManager.itemName[buyId - 1];
             sign.gameObject.SetActive(true);
             Invoke("Wait", 1.5f);
         }
