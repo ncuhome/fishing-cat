@@ -1,0 +1,16 @@
+fileFormatVersion: 2
+<<<<<<< HEAD:Assets/Res/Tiny RPG Forest/Scenes.meta
+guid: 9095a2cec125ee1428d4975e306a4748
+=======
+<<<<<<<< HEAD:Assets/Bag/Res/Tiny RPG Forest/Scenes.meta
+guid: d42eefdb67d85ad48bb8a946bdd9e5cd
+========
+guid: baaf8530b454d154880564f3e5f9c575
+>>>>>>>> 7b9bd7e28766d4d693a493bc623639c003dbbada:Assets/Camera.meta
+>>>>>>> a9b49885f43c20f77c4716fe0632f3f8c7e7e7c4:Assets/Bag/Res/Tiny RPG Forest/Scenes.meta
+folderAsset: yes
+DefaultImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
