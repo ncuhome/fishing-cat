@@ -1,25 +1,35 @@
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting.Dependencies.Sqlite;
 using UnityEditor.ShortcutManagement;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class BuyThings : MonoBehaviour
 {
-    public int price;
+    public static bool show;
+    private int buyId;
+    public Text sign;
+    private void Start()
+    {
+        
+    }
     public void Buy()
     {
-        string name = this.transform.parent.gameObject.name;
-        Debug.Log(name);
-        Item item = Resources.Load<Item>("Item/" + name);
-        Debug.Log(item.itemPrice);
-        price = item.itemPrice;
-        if (SaveManager.Instance.catFood - price >= 0)
+        Debug.Log(1);
+        buyId = int.Parse(this.transform.parent.gameObject.name);
+        if (GlobalSaveManager.instance.saveManager.itemHeld[buyId - 1] == false)
         {
-            SaveManager.Instance.catFood -= price;
-            SaveManager.Instance.itemHeld[item.itemID] += 1;
-            item.itemHeld = SaveManager.Instance.itemHeld[item.itemID] += 1; ;
+            GlobalSaveManager.instance.saveManager.catFood -= GlobalSaveManager.instance.saveManager.itemPrice[buyId - 1];
+            GlobalSaveManager.instance.saveManager.itemHeld[buyId - 1] = true;
+            sign.text = "你购买了" + GlobalSaveManager.instance.saveManager.itemName[buyId - 1];
+            sign.gameObject.SetActive(true);
+            Invoke("Wait", 1.5f);
         }
-
+      
     }   
+    private void Wait()
+    { 
+        sign.gameObject.SetActive(false);
+    }
 }

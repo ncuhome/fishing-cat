@@ -1,32 +1,21 @@
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class ShowShop : MonoBehaviour
 {
-    private static int storePages = 0;      //现在显示的商店页数
-    private static int totalPages = 3;          //商店的总页数
-    public GameObject[] Pages = new GameObject[totalPages];
-
-
-    public void AddStorePages()
+    public static GameObject lattice;
+    public void Update()
     {
-        Pages[storePages].SetActive(false);
-        storePages++;
-        if(storePages > totalPages - 1)
+        for (int i = 0; i < SaveManager.totalNumberOfItems; i++)
         {
-            storePages -= totalPages;
+            if (GlobalSaveManager.instance.saveManager.itemHeld[i] == true)
+            {
+                int a = i + 1;
+                lattice = GameObject.Find("p" + a);
+                lattice.transform.Find("未购买").gameObject.SetActive(false);
+                lattice.transform.Find("购买").gameObject.SetActive(true);
+            }
         }
-        Pages[storePages].SetActive(true);
-    }
-    public void CutStorePages()
-    {
-        Pages[storePages].SetActive(false);
-        storePages--;
-        if (storePages < 0)
-        {
-            storePages += totalPages;
-        }
-        Pages[storePages].SetActive(true);
     }
 }
