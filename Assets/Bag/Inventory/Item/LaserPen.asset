@@ -14,8 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemName: LaserPen
   itemImage: {fileID: -1472766964, guid: 9fde5a151ecdb724a83529e61451ad47, type: 3}
-  itemHeld: 1
-  itemID: 1
-  itemPrice: 12
-  itemInfo: "\u6FC0\u5149\u7B14\uFF0C\u8FFD\u9010\u5149\u70B9\u662F\u732B\u732B\u7684\u5929\u6027"
+  itemHeld: 16
+  itemID: 17
+  itemPrice: 1
+  itemInfo: "\u80FD\u591F\u53D1\u5C04\u7EA2\u8272\u6FC0\u5149\u7684\u7B14\u5F62\u88C5\u7F6E\u3002\u8FFD\u9010\u5149\u70B9\u662F\u732B\u732B\u7684\u5929\u6027"
   equip: 1

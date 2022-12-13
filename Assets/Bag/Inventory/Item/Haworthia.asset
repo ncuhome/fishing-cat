@@ -10,12 +10,12 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 8b4a31e9c83d34c498e9fa2468610835, type: 3}
-  m_Name: FishingPole
+  m_Name: Haworthia
   m_EditorClassIdentifier: 
-  itemName: ' FishingPole'
-  itemImage: {fileID: 722413148, guid: a3a789c24c117fa4d931719d08f1e441, type: 3}
-  itemHeld: 13
-  itemID: 16
+  itemName: Haworthia
+  itemImage: {fileID: 22539612, guid: 5038311b4d466c94e814c15fa8a41913, type: 3}
+  itemHeld: 1
+  itemID: 5
   itemPrice: 1
-  itemInfo: "\u7528\u6811\u679D\u548C\u7FBD\u6BDB\u5236\u6210\u7684\u7B80\u6613\u9017\u732B\u68D2\u3002\u4E0D\u8981\u88AB\u732B\u6251\u5230"
-  equip: 1
+  itemInfo: "\u5982\u9E1F\u7C7B\u5C3E\u7FBD\u822C\u7EEE\u4E3D\u7684\u591A\u8089\u690D\u7269\u3002\u8C61\u5F81\u7740\u5F00\u6717\u4E0E\u6D3B\u6CFC\u7684\u82B1\u7EB9\u9971\u53D7\u4F17\u4EBA\u559C\u7231"
+  equip: 0

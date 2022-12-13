@@ -13,9 +13,9 @@ MonoBehaviour:
   m_Name: Mouse
   m_EditorClassIdentifier: 
   itemName: Sword
-  itemImage: {fileID: 176325507, guid: 7cb5a50b8cc320c4d9ce03f8e889d1c4, type: 3}
-  itemHeld: 3
-  itemID: 2
-  itemPrice: 32
-  itemInfo: "\u6A21\u4EFF\u8001\u9F20\u7684\u884C\u52A8\u65B9\u5F0F\u5236\u4F5C\u7684\u9065\u63A7\u88C5\u7F6E"
+  itemImage: {fileID: 1965279693, guid: 680e6426f6bb9ca40ba46ae475582cbe, type: 3}
+  itemHeld: 34
+  itemID: 18
+  itemPrice: 1
+  itemInfo: "\u6A21\u4EFF\u8001\u9F20\u7684\u884C\u52A8\u65B9\u5F0F\u5236\u4F5C\u7684\u9065\u63A7\u88C5\u7F6E\u3002\u5431\u5431\u3001\u5431\u5431"
   equip: 1
