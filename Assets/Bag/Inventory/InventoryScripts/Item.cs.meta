@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+<<<<<<< HEAD:Assets/Inventory/InventoryScripts/Item.cs.meta
+guid: 8b4a31e9c83d34c498e9fa2468610835
+=======
+guid: 304d4754999f4344d82ceeeeaee666d3
+>>>>>>> a9b49885f43c20f77c4716fe0632f3f8c7e7e7c4:Assets/Bag/Inventory/InventoryScripts/Item.cs.meta
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences: []
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

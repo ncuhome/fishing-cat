@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+<<<<<<< HEAD:Assets/Inventory/Item/armor.asset.meta
+guid: 39c2abff1c435d740a5ec96eb9ab67be
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 11400000
+=======
+guid: aec84892e7352fa4cab1468d8df24fb5
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 0
+>>>>>>> a9b49885f43c20f77c4716fe0632f3f8c7e7e7c4:Assets/Bag/Inventory/Item/armor.asset.meta
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

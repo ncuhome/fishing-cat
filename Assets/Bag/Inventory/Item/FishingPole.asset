@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8b4a31e9c83d34c498e9fa2468610835, type: 3}
+  m_Name: FishingPole
+  m_EditorClassIdentifier: 
+  itemName: ' FishingPole'
+  itemImage: {fileID: 722413148, guid: a3a789c24c117fa4d931719d08f1e441, type: 3}
+  itemHeld: 4
+  itemID: 0
+  itemPrice: 10
+  itemInfo: "\u7B80\u6613\u9017\u732B\u68D2\u3002\u4E0D\u8981\u88AB\u732B\u6251\u5230"
+  equip: 1

@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+<<<<<<< HEAD:Assets/Inventory/InventoryScripts/DestroyItem.cs.meta
+guid: de5e485f7794f544e9cce51a80ea1011
+=======
+guid: 61afd470bfaec0e48826e481f9275425
+>>>>>>> a9b49885f43c20f77c4716fe0632f3f8c7e7e7c4:Assets/Bag/Inventory/InventoryScripts/DestroyItem.cs.meta
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences: []
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
