@@ -11,7 +11,6 @@ public class PopAnimation : MonoBehaviour
     public GameObject shopUI;
     public bool show;
 
-    public float maxTime = 1.2f; //最大放大倍数
 
     IEnumerator ShowShopUI(GameObject UI)
     {
@@ -20,7 +19,7 @@ public class PopAnimation : MonoBehaviour
         Debug.Log("1");
         while (time <= 1.1f)
         {
-            UI.transform.localScale = Vector3.one * maxTime * showCurve.Evaluate(time);
+            UI.transform.localScale = Vector3.one *  showCurve.Evaluate(time);
             time += Time.deltaTime * showSpeed;
             yield return null;
         }
@@ -31,7 +30,7 @@ public class PopAnimation : MonoBehaviour
         float time = 0;
         while (time <= 1.1f)
         {
-            UI.transform.localScale = Vector3.one * maxTime * hideCurve.Evaluate(time);
+            UI.transform.localScale = Vector3.one *  hideCurve.Evaluate(time);
             time += Time.deltaTime * showSpeed;
             yield return null;
         }

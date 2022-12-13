@@ -8,11 +8,9 @@ public class BuyThings : MonoBehaviour
     public static bool show;
     private static int buyId;
     public Text sign;
-    public GameObject decideBuyUI;
-    public Text itemName;
-    public Text itemIntroduction;
-
-    //不 find 了，记得手动录入
+    private GameObject decideBuyUI;
+    private Text itemName;
+    private Text itemIntroduction;
     private void Start()
     {
         decideBuyUI = GameObject.Find("确认购买");
@@ -21,11 +19,11 @@ public class BuyThings : MonoBehaviour
     }
     public void ShowBuy()
     {
-        Debug.Log(1);
         buyId = int.Parse(this.transform.parent.gameObject.name);
+        Debug.Log(buyId);
         decideBuyUI.transform.localScale = Vector3.one;
-        itemName.text = GlobalSaveManager.instance.saveManager.itemName[buyId];
-        itemIntroduction.text = GlobalSaveManager.instance.saveManager.itemIntroduction[buyId];
+        itemName.text = GlobalSaveManager.instance.saveManager.itemName[buyId - 1];
+        itemIntroduction.text = GlobalSaveManager.instance.saveManager.itemIntroduction[buyId -1];
     }
     public void Buy()
     {
