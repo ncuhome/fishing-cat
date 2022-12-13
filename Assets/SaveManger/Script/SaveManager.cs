@@ -1,3 +1,4 @@
+using System.Data.Common;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -14,27 +15,29 @@ public struct CatInfo
     public int g;
     public int b;
 }
+
 public class SaveManager : MonoBehaviour
 {
     /*
-   ÏÂÃæÊÇ»á·¢ÉúµÄ¸Ä±äµÄÁ¿ (»î±äÁ¿)
+   ä¸‹é¢æ˜¯ä¼šå‘ç”Ÿçš„æ”¹å˜çš„é‡ (æ´»å˜é‡)
    */
-    public int catNum = 1;
-
+    public int catNum = 0;
     public int cat_inYard_Num;
 
+    //ç¬¬ä¸€åªçŒ«
+    public CatInfo cat1;
+    //å…¶å®ƒçŒ«é¢œè‰²
     public List<CatInfo> catList = new List<CatInfo>();
 
     public int catFood = 2;
-
     public int fishingRodNumber = 7;
 
-    public int[] itemPrice = new int[totalNumberOfItems];   //ÎïÆ·µÄÓµÓĞÊıÁ¿
+    public int[] itemPrice = new int[totalNumberOfItems];   //ç‰©å“çš„æ‹¥æœ‰æ•°é‡
     public bool[] itemHeld = new bool[totalNumberOfItems];
     public string[] itemName = new string[totalNumberOfItems];
     public string[] itemIntroduction = new string[totalNumberOfItems];
 
-    public int fishingSceneIndex; //µöÃ¨±³¾°£¬0±íÊ¾ÔÚ²İÔ­£¬1±íÊ¾ÔÚncu£¬2±íÊ¾ÔÚ
+    public int fishingSceneIndex; //é’“çŒ«èƒŒæ™¯ï¼Œ0è¡¨ç¤ºåœ¨è‰åŸï¼Œ1è¡¨ç¤ºåœ¨ncuï¼Œ2è¡¨ç¤ºåœ¨
 
     public bool showNcu_blue = false;
     public bool showRoom_pink = false;
@@ -45,20 +48,21 @@ public class SaveManager : MonoBehaviour
     public bool showCactus1 = false;
     public bool showCactus2 = false;
 
-    public bool canChooseProp = true; //¿ÉÒÔÔÚ±³°ü use µÀ¾ß
-    public bool canChooseFacility = true; //¿ÉÒÔÔÚ±³°ü use ÉèÊ©
-    public bool canChooseObject = false; //¿ÉÒÔÔÚ±³°ü use ÎïÌå
+    public bool canChooseProp = true; //å¯ä»¥åœ¨èƒŒåŒ… use é“å…·
+    public bool canChooseFacility = true; //å¯ä»¥åœ¨èƒŒåŒ… use è®¾æ–½
+    public bool canChooseObject = false; //å¯ä»¥åœ¨èƒŒåŒ… use ç‰©ä½“
 
     /*
-    ÏÂÃæÊÇ²»»á·¢ÉúµÄ¸Ä±äµÄÁ¿ (ËÀ±äÁ¿)
+    ä¸‹é¢æ˜¯ä¸ä¼šå‘ç”Ÿçš„æ”¹å˜çš„é‡ (æ­»å˜é‡)
     */
 
 
 
     /*
-   ÏÂÃæÊÇÆäËûµÄÒ»Ğ©±äÁ¿
+   ä¸‹é¢æ˜¯å…¶ä»–çš„ä¸€äº›å˜é‡
    */
-    public SaveManager saveManager;  //´æ´¢Êı¾İµÄ¶ÔÏó(saveMangerÔ¤ÖÆÌå)
+    static bool isDontDestroy = false;
+    public SaveManager saveManager;  //å­˜å‚¨æ•°æ®çš„å¯¹è±¡(saveMangeré¢„åˆ¶ä½“)
     public static int totalNumberOfItems = 16;
 
 
@@ -76,19 +80,30 @@ public class SaveManager : MonoBehaviour
     //     }
     // }
 
-    private void Start()  //ÉèÖÃµ¥Àı
+    void Awake()
+    {
+        if (!isDontDestroy)
+        {
+            DontDestroyOnLoad(this.gameObject);
+        }
+        isDontDestroy = true;
+        // anim = GetComponent<Animator>();
+    }
+
+    private void Start()  //è®¾ç½®å•ä¾‹
     {
         if (catNum == 0)
         {
-            int R = Random.Range(1, 255);
-            int G = Random.Range(1, 255);
-            int B = Random.Range(1, 255);
-            CatInfo gift;
-            gift.catName = "Ã¨ÓÖ";
-            gift.r = R;
-            gift.g = G;
-            gift.b = B;
+            CatInfo catInfo;
+            catInfo.catName = "gift";
+            catInfo.r = Random.Range(1, 255);
+            catInfo.g = Random.Range(1, 255);
+            catInfo.b = Random.Range(1, 255);
+            catList.Add(catInfo);
+            SaveGame();
+            catNum++;
         }
+
         // saveManager = Instance;
         for (int i = 0; i < totalNumberOfItems; i++)
         {
@@ -97,20 +112,20 @@ public class SaveManager : MonoBehaviour
         }
     }
 
-    public void SaveGame()  //´æ´¢Êı¾İº¯Êı
+    public void SaveGame()  //å­˜å‚¨æ•°æ®å‡½æ•°
     {
-        Debug.Log("Êı¾İ´¢´æÔÚ" + Application.persistentDataPath);  //Êä³öÊı¾İµÄ´¢´æÎ»ÖÃ
-        if(!Directory.Exists(Application.dataPath + "/game_SaveDate"))  //Èç¹ûÃ»ÓĞÕÒµ½Êı¾İ´æ´¢ÎÄ¼ş¾Í´´½¨Ò»¸ö
+        Debug.Log("æ•°æ®å‚¨å­˜åœ¨" + Application.persistentDataPath);  //è¾“å‡ºæ•°æ®çš„å‚¨å­˜ä½ç½®
+        if(!Directory.Exists(Application.dataPath + "/game_SaveDate"))  //å¦‚æœæ²¡æœ‰æ‰¾åˆ°æ•°æ®å­˜å‚¨æ–‡ä»¶å°±åˆ›å»ºä¸€ä¸ª
         {
             Directory.CreateDirectory(Application.persistentDataPath + "/game_SaveDate");
         }
-        BinaryFormatter formatter = new BinaryFormatter();  //¶ş½øÖÆ±äÁ¿
-        FileStream file = File.Create(Application.persistentDataPath + "/game_SaveDate/save.txt"); //ÎÄ¼ş
-        var json = JsonUtility.ToJson(saveManager);  //°ÑÒª´æ´¢µÄ±äÁ¿×ª»»Îªjson
-        formatter.Serialize(file, json);  //°Ñjson×ªÎª¶ş½øÖÆ´æÈëÎÄ¼ş
-        file.Close();  //±£´æĞŞ¸Ä
+        BinaryFormatter formatter = new BinaryFormatter();  //äºŒè¿›åˆ¶å˜é‡
+        FileStream file = File.Create(Application.persistentDataPath + "/game_SaveDate/save.txt"); //æ–‡ä»¶
+        var json = JsonUtility.ToJson(saveManager);  //æŠŠè¦å­˜å‚¨çš„å˜é‡è½¬æ¢ä¸ºjson
+        formatter.Serialize(file, json);  //æŠŠjsonè½¬ä¸ºäºŒè¿›åˆ¶å­˜å…¥æ–‡ä»¶
+        file.Close();  //ä¿å­˜ä¿®æ”¹
     }
-    public void LoadGame()  //¶ÁÈ¡Êı¾İº¯Êı
+    public void LoadGame()  //è¯»å–æ•°æ®å‡½æ•°
     { 
         BinaryFormatter bf = new BinaryFormatter();
         if (File.Exists(Application.persistentDataPath + "/game_SaveDate/save.txt"))
