@@ -10,12 +10,12 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 8b4a31e9c83d34c498e9fa2468610835, type: 3}
-  m_Name: FishingPole
+  m_Name: RedMoodenNest
   m_EditorClassIdentifier: 
-  itemName: ' FishingPole'
-  itemImage: {fileID: 722413148, guid: a3a789c24c117fa4d931719d08f1e441, type: 3}
-  itemHeld: 13
-  itemID: 16
+  itemName: RedMoodenNest
+  itemImage: {fileID: -1238640724, guid: a9c36ea916f2775438a17d613b6cff11, type: 3}
+  itemHeld: 1
+  itemID: 13
   itemPrice: 1
-  itemInfo: "\u7528\u6811\u679D\u548C\u7FBD\u6BDB\u5236\u6210\u7684\u7B80\u6613\u9017\u732B\u68D2\u3002\u4E0D\u8981\u88AB\u732B\u6251\u5230"
-  equip: 1
+  itemInfo: "\u5B9A\u5236\u7684\u9AD8\u7EA7\u7EA2\u6728\u732B\u7A9D\u3002\u7ED9\u5176\u4E2D\u7684\u5C0F\u4F4F\u6237\u4EEC\u6700\u5B8C\u7F8E\u7684\u4F53\u9A8C"
+  equip: 0
