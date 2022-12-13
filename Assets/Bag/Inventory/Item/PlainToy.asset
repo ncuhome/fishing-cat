@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemName: PlainToy
   itemImage: {fileID: 373565650, guid: 4897e95f7fc57284bb646ed5df2caf36, type: 3}
-  itemHeld: 1
+  itemHeld: 12
   itemID: 14
   itemPrice: 1
   itemInfo: "\u517C\u5177\u9017\u732B\u68D2\u4E0E\u6EDA\u7403\u529F\u80FD\u7684\u5C0F\u73A9\u5177\u3002\u6DF1\u53D7\u732B\u732B\u4EEC\u7684\u559C\u7231"
