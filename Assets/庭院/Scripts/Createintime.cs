@@ -28,6 +28,7 @@ public class Createintime : MonoBehaviour
         {
             Debug.Log("生成猫饼");
             MaoBing.SetActive(true);
+            
         }
     }
 }

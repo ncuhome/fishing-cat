@@ -11,11 +11,11 @@ public class FadeCanvasLoader : MonoBehaviour
 
     void Awake()
     {
-        if (!isDontDestroy)
-        {
-            DontDestroyOnLoad(this.gameObject);
-        }
-        isDontDestroy = true;
+        // if (!isDontDestroy)
+        // {
+        //     DontDestroyOnLoad(this.gameObject);
+        // }
+        // isDontDestroy = true;
         // anim = GetComponent<Animator>();
     }
 
