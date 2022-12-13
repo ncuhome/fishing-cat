@@ -91,8 +91,6 @@ public class MenuManager : MonoBehaviour
             yield return null;
         }
 
-        load.FadeIn();
-
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + index);
     }
 }

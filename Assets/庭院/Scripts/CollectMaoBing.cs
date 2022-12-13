@@ -31,6 +31,7 @@ public class CollectMaoBing : MonoBehaviour
                 MaoBing.SetActive(false);
                 BingNumber++;
                 Createintime.DelayTime = Time.time;
+                GlobalSaveManager.instance.saveManager.catFood++;
             }
         }
     }
