@@ -82,6 +82,19 @@ public class SaveManager : MonoBehaviour
 
     void Awake()
     {
+        if (catNum == 0)
+        {
+
+            CatInfo catInfo;
+            catInfo.catName = "gift";
+            catInfo.r = Random.Range(1, 255);
+            catInfo.g = Random.Range(1, 255);
+            catInfo.b = Random.Range(1, 255);
+            catList.Add(catInfo);
+            SaveGame();
+            catNum++;
+        }
+
         if (!isDontDestroy)
         {
             DontDestroyOnLoad(this.gameObject);
@@ -92,17 +105,7 @@ public class SaveManager : MonoBehaviour
 
     private void Start()  //设置单例
     {
-        if (catNum == 0)
-        {
-            CatInfo catInfo;
-            catInfo.catName = "gift";
-            catInfo.r = Random.Range(1, 255);
-            catInfo.g = Random.Range(1, 255);
-            catInfo.b = Random.Range(1, 255);
-            catList.Add(catInfo);
-            SaveGame();
-            catNum++;
-        }
+      
 
         // saveManager = Instance;
         for (int i = 0; i < totalNumberOfItems; i++)
