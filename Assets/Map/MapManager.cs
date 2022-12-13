@@ -46,6 +46,7 @@ public class MapManager : MonoBehaviour
         grassButton.onClick.AddListener(() => LoadGrassScene(2));
         ncuButton.onClick.AddListener(() => LoadNcuScene(2));
         roomButton.onClick.AddListener(() => LoadRoomScene(2));
+        FadeCanvasLoaderManager.instance.fadeCanvasLoader.FadeIn();
     }
 
     void ChangeVisable(Image image, bool show)
