@@ -7,7 +7,7 @@ public class ShowShop : MonoBehaviour
     public static GameObject lattice;
     public void Update()
     {
-        for (int i = 0; i < SaveManager.totalNumberOfItems; i++)
+        for (int i = 0; i < 16; i++)
         {
             if (GlobalSaveManager.instance.saveManager.itemHeld[i] == true)
             {

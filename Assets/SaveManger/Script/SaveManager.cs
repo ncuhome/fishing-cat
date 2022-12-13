@@ -12,9 +12,9 @@ public class SaveManager : MonoBehaviour
     /*
    下面是会发生的改变的量 (活变量)
    */
-    public int catFood;
+    public int catFood = 2;
 
-    public int fishingRodNumber = 0;
+    public int fishingRodNumber = 7;
 
     public int[] itemPrice = new int[totalNumberOfItems];   //物品的拥有数量
     public bool[] itemHeld = new bool[totalNumberOfItems];
@@ -32,7 +32,6 @@ public class SaveManager : MonoBehaviour
    */
     public SaveManager saveManager;  //存储数据的对象(saveManger预制体)
     public static int totalNumberOfItems = 16;
-    public int test = 0;           //测试变量
 
 
     // public static SaveManager Instance;
@@ -54,7 +53,7 @@ public class SaveManager : MonoBehaviour
         // saveManager = Instance;
         for (int i = 0; i < totalNumberOfItems; i++)
         {
-            itemPrice[i] = 100;
+            itemPrice[i] = 1;
             itemHeld[i] = false;
         }
     }
