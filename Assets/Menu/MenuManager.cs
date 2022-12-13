@@ -36,9 +36,10 @@ public class MenuManager : MonoBehaviour
 
     void LoadNextScene()
     {
-        startButton.onClick.RemoveAllListeners();
-        load.FadeOut();
-        StartCoroutine(VignetteFadeOut(load.fadeDuration, 1));
+        SceneManager.LoadScene(1);
+        // startButton.onClick.RemoveAllListeners();
+        // load.FadeOut();
+        // StartCoroutine(VignetteFadeOut(load.fadeDuration, 1));
     }
 
     void ExitGame()

@@ -11,7 +11,8 @@ public class DongHua : MonoBehaviour
     void Start()
     {
         spriterenderer = GetComponent<SpriteRenderer>();
-       // spriterenderer.color = new Color32(85, 145, 255, 255);
+        Debug.Log(CreateCat.i);
+        spriterenderer.color = new Color(GlobalSaveManager.instance.saveManager.catList[CreateCat.i].r / 255f, GlobalSaveManager.instance.saveManager.catList[CreateCat.i].g / 255f, GlobalSaveManager.instance.saveManager.catList[CreateCat.i].b / 255f, 1);
     }
 
     // Update is called once per frame
