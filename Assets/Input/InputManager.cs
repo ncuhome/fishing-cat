@@ -28,7 +28,7 @@ public class InputManager
         if (pointX > 1) { pointX = 1.0f; }
         if (pointX < -1) { pointX = -1.0f; }
 
-        float vecX = pointerWorldPos.x - backgroundPos.x;
+        // float vecX = pointerWorldPos.x - backgroundPos.x;
         // backgroundPos.x += (maxRadiu > vecX) ? vecX : maxRadiu;
     }
 

@@ -21,10 +21,10 @@ public class CameraManager : MonoBehaviour
 
     void Update()
     {
-        // if (Mathf.Abs(inputManager.horizontal) < 0.005f && Mathf.Abs(inputManager.horizontal) > -0.005f)
-        // {
-        //     return;
-        // }
+        if (Mathf.Abs(inputManager.horizontal) < 0.005f && Mathf.Abs(inputManager.horizontal) > -0.005f)
+        {
+            return;
+        }
         Vector3 tPos = new Vector3(0, transform.position.y, transform.position.z);
         tPos.x = Mathf.Clamp(transform.position.x + inputManager.horizontal * maxMoveSpeed * (-1), border.x + camWidth, border.y - camWidth);
         transform.position = tPos;

@@ -12,6 +12,8 @@ public class SaveManager : MonoBehaviour
     /*
    下面是会发生的改变的量 (活变量)
    */
+    public int catNum = 1;
+
     public int catFood = 2;
 
     public int fishingRodNumber = 7;
@@ -20,6 +22,21 @@ public class SaveManager : MonoBehaviour
     public bool[] itemHeld = new bool[totalNumberOfItems];
     public string[] itemName = new string[totalNumberOfItems];
     public string[] itemIntroduction = new string[totalNumberOfItems];
+
+    public int fishingSceneIndex; //钓猫背景，0表示在草原，1表示在ncu，2表示在
+
+    public bool showNcu_blue = false;
+    public bool showRoom_pink = false;
+    public bool showWood1 = false;
+    public bool showWood2 = false;
+    public bool showToy1 = false;
+    public bool showToy2 = false;
+    public bool showCactus1 = false;
+    public bool showCactus2 = false;
+
+    public bool canChooseProp = true; //可以在背包 use 道具
+    public bool canChooseFacility = true; //可以在背包 use 设施
+    public bool canChooseObject = false; //可以在背包 use 物体
 
     /*
     下面是不会发生的改变的量 (死变量)

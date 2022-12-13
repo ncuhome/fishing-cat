@@ -11,7 +11,7 @@ public class DongHua : MonoBehaviour
     void Start()
     {
         spriterenderer = GetComponent<SpriteRenderer>();
-        spriterenderer.color = new Color32(85, 145, 255, 255);
+       // spriterenderer.color = new Color32(85, 145, 255, 255);
     }
 
     // Update is called once per frame

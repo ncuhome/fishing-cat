@@ -59,8 +59,8 @@ public class DongHuaController : MonoBehaviour
         Cartoon5.SetActive(false);
         Cartoon6.SetActive(false);
         Cartoon7.SetActive(false);
-        Rdm = Random.Range(4, 7);
-        rdm = Random.Range(2, 3);
+        Rdm = Random.Range(40, 70);
+        rdm = Random.Range(15, 30);
         delayTime = Time.time;
         Debug.Log("开始");
     }
@@ -72,7 +72,7 @@ public class DongHuaController : MonoBehaviour
         if (Cartoon0.activeInHierarchy == true && (Time.time - delayTime > Rdm))
         {
             Debug.Log("换动作");
-            Rdm = Random.Range(4, 7);
+            Rdm = Random.Range(40, 70);
             random = Random.Range(1, 7);
             Cartoon0.SetActive(false);
             switch (random)
@@ -128,7 +128,7 @@ public class DongHuaController : MonoBehaviour
         if (Cartoon0.activeInHierarchy== false && (Time.time - delayTime > rdm))
         {
             Debug.Log("开始行走");
-            rdm = Random.Range(2, 3);
+            rdm = Random.Range(15, 30);
             random = Random.Range(1, 7);
             switch(Last_random)
             {

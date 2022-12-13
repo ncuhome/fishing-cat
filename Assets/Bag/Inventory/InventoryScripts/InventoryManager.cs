@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
 
 
 //背包管理器，挂载在Canvas上
@@ -16,7 +17,8 @@ public class InventoryManager : MonoBehaviour
     public Inventory Bag;
     public GameObject slotGrid;
     public Slot slotPrefab;
-    public Text itemInformation;
+    // public Text itemInformation;
+    public TMP_Text itemInformation;
 
 
     private void Awake()
