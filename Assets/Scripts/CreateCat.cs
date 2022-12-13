@@ -10,10 +10,10 @@ public class CreateCat : MonoBehaviour
 
     // Start is called before the first frame update
 
-    private int i ;
+    private int i, CatNum;
     void Start()
     {
-        
+        CatNum = SaveManger.Instance.catNum;
     }
 
     // Update is called once per frame
