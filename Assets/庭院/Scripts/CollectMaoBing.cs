@@ -11,7 +11,6 @@ public class CollectMaoBing : MonoBehaviour
     [SerializeField]
     private GameObject MaoBing;
 
-    public int BingNumber;
 
     // Start is called before the first frame update
     void Start()
@@ -29,7 +28,6 @@ public class CollectMaoBing : MonoBehaviour
             foreach (Collider2D c in col)
             {
                 MaoBing.SetActive(false);
-                BingNumber++;
                 Createintime.DelayTime = Time.time;
                 GlobalSaveManager.instance.saveManager.catFood++;
             }

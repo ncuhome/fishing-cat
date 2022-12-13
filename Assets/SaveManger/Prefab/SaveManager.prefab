@@ -44,7 +44,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4bae771f73c2a7e45aeb36ae8048418a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  catNum: 1
+  catNum: 0
+  cat_inYard_Num: 0
   catFood: 2
   fishingRodNumber: 7
   itemPrice: 00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
