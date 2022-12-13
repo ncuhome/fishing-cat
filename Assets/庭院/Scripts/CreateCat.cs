@@ -13,17 +13,17 @@ public class CreateCat : MonoBehaviour
     private int i, CatNum;
     void Start()
     {
-        CatNum = SaveManger.Instance.catNum;
+        CatNum = GlobalSaveManager.instance.saveManager.catNum;
     }
 
     // Update is called once per frame
     void Update()
     {
-        for (i=0; SaveManger.Instance.catNum > 0; SaveManger.Instance.catNum--,i++)
+        for (i=0; CatNum > 0; CatNum--,i++)
         {
             GameObject newClone = (GameObject)Instantiate(Resources.Load("Prefabs/Cat"), new Vector3(Random.Range(100, 1000), Random.Range(400, 1100), 0), Quaternion.Euler(new Vector3(0, 0, 0f)));
-            newClone.name = SaveManger.Instance.catColor[i,0].ToString();//赋予预制体在场景中的名字
-            newClone.GetComponent<SpriteRenderer>().color = new Color(SaveManger.Instance.catColor[i, 1] / 255f, SaveManger.Instance.catColor[i, 2] / 255f, SaveManger.Instance.catColor[i, 3] / 255f, 1);
+            newClone.name = GlobalSaveManager.instance.saveManager.catColor[i,0].ToString();//赋予预制体在场景中的名字
+            newClone.GetComponent<SpriteRenderer>().color = new Color(GlobalSaveManager.instance.saveManager.catColor[i, 1] / 255f, GlobalSaveManager.instance.saveManager.catColor[i, 2] / 255f, GlobalSaveManager.instance.saveManager.catColor[i, 3] / 255f, 1);
         }
     }
 }

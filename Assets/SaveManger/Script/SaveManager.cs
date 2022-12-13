@@ -7,12 +7,23 @@ using UnityEngine.SceneManagement;
 using UnityEditor;
 using Unity.VisualScripting;
 
+public struct CatInfo
+{
+    public string catName;
+    public int r;
+    public int g;
+    public int b;
+}
 public class SaveManager : MonoBehaviour
 {
     /*
    下面是会发生的改变的量 (活变量)
    */
     public int catNum = 1;
+
+    public int cat_inYard_Num;
+
+    public List<CatInfo> catList = new List<CatInfo>();
 
     public int catFood = 2;
 
@@ -67,6 +78,17 @@ public class SaveManager : MonoBehaviour
 
     private void Start()  //设置单例
     {
+        if (catNum == 0)
+        {
+            int R = Random.Range(1, 255);
+            int G = Random.Range(1, 255);
+            int B = Random.Range(1, 255);
+            CatInfo gift;
+            gift.catName = "猫又";
+            gift.r = R;
+            gift.g = G;
+            gift.b = B;
+        }
         // saveManager = Instance;
         for (int i = 0; i < totalNumberOfItems; i++)
         {

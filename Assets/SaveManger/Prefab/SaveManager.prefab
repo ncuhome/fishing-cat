@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6978363045421627219}
-  - component: {fileID: 6978363045421627218}
+  - component: {fileID: -3556495121039514336}
   m_Layer: 0
   m_Name: SaveManager
   m_TagString: SaveManager
@@ -32,7 +32,7 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &6978363045421627218
+--- !u!114 &-3556495121039514336
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -41,11 +41,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 6978363045421627217}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f4f56493154a6ae4abf4a3a99c5df8e0, type: 3}
+  m_Script: {fileID: 11500000, guid: 4bae771f73c2a7e45aeb36ae8048418a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  catFood: 0
-  fishingRodNumber: 0
+  catNum: 1
+  catFood: 2
+  fishingRodNumber: 7
   itemPrice: 00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
   itemHeld: 00000000000000000000000000000000
   itemName:
@@ -82,5 +83,16 @@ MonoBehaviour:
   - 
   - 
   - 
-  saveManager: {fileID: 6978363045421627218}
-  test: 0
+  fishingSceneIndex: 0
+  showNcu_blue: 0
+  showRoom_pink: 0
+  showWood1: 0
+  showWood2: 0
+  showToy1: 0
+  showToy2: 0
+  showCactus1: 0
+  showCactus2: 0
+  canChooseProp: 1
+  canChooseFacility: 1
+  canChooseObject: 0
+  saveManager: {fileID: 0}
