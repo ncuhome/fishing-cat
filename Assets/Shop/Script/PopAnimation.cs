@@ -10,10 +10,15 @@ public class PopAnimation : MonoBehaviour
     public float showSpeed = 3f;
     public GameObject shopUI;
     public bool show;
+    public static GameObject shopPanal;
 
-
+    private void Start()
+    {
+        shopPanal = GameObject.Find("shopPanal");
+    }
     IEnumerator ShowShopUI(GameObject UI)
     {
+        shopPanal.transform.localScale = Vector3.one;
         BuyThings.show = true;
         float time = 0;
         Debug.Log("1");
@@ -27,6 +32,7 @@ public class PopAnimation : MonoBehaviour
 
     IEnumerator HideShopUI(GameObject UI)
     {
+        shopPanal.transform.localScale = new Vector3(0, 0, 0);
         float time = 0;
         while (time <= 1.1f)
         {
